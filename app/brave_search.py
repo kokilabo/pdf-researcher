@@ -32,26 +32,3 @@ async def search_pdfs(prompt: str):
             "url": item.get("url"),
         })
     return results
-
-# 代替実装: curlを使用した検索（必要な場合のみ使用）
-def search_pdfs_with_curl(prompt: str):
-    query = f"filetype:pdf {prompt}"
-    curl_command = [
-        "curl",
-        "-X", "GET",
-        "-H", "Accept: application/json",
-        "-H", "Accept-Encoding: gzip",
-        "-H", f"X-Subscription-Token: {BRAVE_API_KEY}",
-        f"{BRAVE_SEARCH_URL}?q={query}&count=5"
-    ]
-    
-    result = subprocess.run(curl_command, capture_output=True, text=True)
-    data = json.loads(result.stdout)
-    
-    results = []
-    for item in data.get("web", {}).get("results", []):
-        results.append({
-            "title": item.get("title"),
-            "url": item.get("url"),
-        })
-    return results
