@@ -18,3 +18,41 @@ https://github.com/user-attachments/assets/877163ad-5a5d-484f-839a-9b1355f1b71a
 -   **パッケージ管理/仮想環境:** uv
 -   **外部API:** Brave Search API
 -   **コアライブラリ:** FastMCP
+
+## 使い方
+
+### インストール
+
+1.  リポジトリをクローンします
+    ```bash
+    git clone https://github.com/your-username/pdf-researcher.git
+    ```
+2.  仮想環境を設定します
+    ```bash
+    cd pdf-researcher
+    uv init
+    ```
+3.  必要なパッケージをインストールします
+    ```bash
+    uv add fastapi fastmcp httpx python-dotenv uvicorn
+    ```
+以下のコードをMCPクライアントに追加してください
+
+```json
+{
+    "mcpServers": {
+        "PDFSearcher": {
+            "command": "uv",
+            "args": [
+                "run",
+                "--with",
+                "fastmcp",
+                "fastmcp",
+                "run",
+                "/path/to/pdf-researcher/app/server.py"
+            ]
+        }
+    }
+}
+
+```
