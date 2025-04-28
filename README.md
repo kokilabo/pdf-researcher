@@ -36,8 +36,11 @@ https://github.com/user-attachments/assets/877163ad-5a5d-484f-839a-9b1355f1b71a
     ```bash
     uv add fastapi fastmcp httpx python-dotenv uvicorn
     ```
-以下のコードをMCPクライアントに追加してください
-
+4.  `.env`ファイルを作成し、Brave Search APIキーを設定します
+    ```bash
+    BRAVE_API_KEY=your_api_key
+    ```
+5.  以下のコードをMCPクライアントに追加してください
 ```json
 {
     "mcpServers": {
