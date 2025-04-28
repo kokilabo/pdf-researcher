@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/877163ad-5a5d-484f-839a-9b1355f1b71a
 
 1.  リポジトリをクローンします
     ```bash
-    git clone https://github.com/your-username/pdf-researcher.git
+    git clone https://github.com/kokilabo/pdf-researcher.git
     ```
 2.  仮想環境を設定します
     ```bash
