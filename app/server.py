@@ -1,5 +1,5 @@
 from fastmcp import FastMCP
-from .brave_search import search_pdfs  # 相対インポートに変更
+from brave_search import search_pdfs
 
 mcp = FastMCP("PDFSearcher")
 
